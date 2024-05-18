@@ -44,5 +44,5 @@ RUN pip3 install picamera2
 # Copy the test script to the container
 COPY camera_test /app/camera_test
 
-# Set the entry point
+# Set the entry point. You can comment this out to use your own test scripts...
 CMD ["python3", "/app/camera_test/main.py"]
