@@ -25,7 +25,7 @@ RUN apt update && apt install -y --no-install-recommends \
 WORKDIR /app
 
 # Install libcamera from source
-RUN git clone https://github.com/raspberrypi/libcamera.git
+RUN git clone https://github.com/raspberrypi/libcamera.git && cd libcamera && git checkout 6ddd79b && cd ..
 RUN meson setup libcamera/build libcamera/
 RUN ninja -C libcamera/build/ install
 
